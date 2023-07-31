@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Zenyx69 is Awsome!</title>
+</head>
+<html lang="en">
+    <body>
+        <div class="sidebar">
+            <button class="discord-button" onclick="toggleDwin()">
+                <i class='bx bxl-discord'></i>
+            </button>
+        </div>
+        <div class="container">
+            <h1 class="Title">Zenyx69</h1>
+            <div class="about">
+                <p class="para">Hello, I am <a class="name">Zenyx69</a>, a soon-to-be Computer Science student. I code on <strong>Python</strong> Im trying out Web developing. I was an UI Designer in Roblox. But ofcource Roblox developing wont get me anywhere as a succesful developer so im trying out new coding languages.</p>
+            </div>
+        </div>
+
+        <div class="dwin" id="dwin">
+            <h3>My Discord: </h3>
+            <h4>zenyx._.69#0</h4>
+        </div>
+
+        <script>
+            var dwin = document.getElementById("dwin");
+            var isDwinVisible = false;
+
+            function toggleDwin() {
+                if (!isDwinVisible) {
+                    fadeIn(dwin);
+                } else {
+                    fadeOut(dwin);
+                }
+                isDwinVisible = !isDwinVisible;
+            }
+
+            function fadeIn(element) {
+                element.style.display = "flex";
+                var op = 0.1;
+                var timer = setInterval(function () {
+                    if (op >= 1) {
+                        clearInterval(timer);
+                    }
+                    element.style.opacity = op;
+                    op += op * 0.1;
+                }, 20);
+            }
+
+            function fadeOut(element) {
+                var op = 0;
+                var timer = setInterval(function () {
+                    if (op <= 0) {
+                        clearInterval(timer);
+                        element.style.display = "none";
+                        element.style.opacity = 1;
+                    }
+                    element.style.opacity = op;
+                    op -= op * 0.1; // Slow down the fade-out effect by reducing the decrement value
+                }, 20);
+            }
+        </script>
+    </body>
+</html>
